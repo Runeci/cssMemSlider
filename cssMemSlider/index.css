@@ -1,48 +1,76 @@
+
+@media (max-width: 1000px) {
+    .slider-bottom {
+        flex-direction: column;
+    }
+    .navigation {
+        order: 0;
+    }
+    .quotes-container{
+        order: 1;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: grey;
+    background-color: lightsteelblue;
 }
 
+.body {
+    height: 50vh;
+}
 
 .center {
-    width: 50%;
-    height: 50vh;
+    width: 55%;
+
     margin: 3% auto 0 auto;
-    border: 2px solid wheat;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    background-color: aliceblue;
 }
 
 .slides {
     width: 400%;
-    height: 100%;
     display: flex;
+
 }
 
 
 .navigation {
     display: flex;
-    gap: 10px;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .bar {
-    height: 15px;
-    width: 15px;
+    height: 100%;
+    width: 100%;
     cursor: pointer;
-    border-radius: 50%;
-    background: white;
-    opacity: .8;
     transition: all .5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.bar span {
+    cursor: pointer;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: mediumpurple;
+    border-radius: 50%;
+
 }
 
 .bar:hover {
-    opacity: 1;
-    transform: scale(1.1);
+    opacity: 0.5;
 }
 
 input[name='r'] {
@@ -52,27 +80,14 @@ input[name='r'] {
 
 .slide {
     width: 25%;
-    height: 100%;
     transition: all .5s ease;
 }
 
-.slide-1 {
-    background-color: red;
-    background-image: url('assets/3.jpg');
-    background-size: cover;
-    background-position: center;
-}
 
-.slide-2 {
-    background-color: blue;
-}
+.slide img {
+    width: 100%;
+    height: auto;
 
-.slide-3 {
-    background-color: blueviolet;
-}
-
-.slide-4 {
-    background-color: cornflowerblue;
 }
 
 
@@ -94,11 +109,29 @@ input[name='r'] {
 }
 
 
+
+
+
+#r1:checked ~ .slider .slider-bottom .navigation label:nth-child(1) span,
+#r2:checked ~ .slider .slider-bottom .navigation label:nth-child(2) span,
+#r3:checked ~ .slider .slider-bottom .navigation label:nth-child(3) span,
+#r4:checked ~ .slider .slider-bottom .navigation label:nth-child(4) span{
+    background-color: lightsteelblue;
+}
+
+#r1:active ~ .slider .slider-bottom .navigation label:nth-child(1) span,
+#r2:active ~ .slider .slider-bottom .navigation label:nth-child(2) span,
+#r3:active ~ .slider .slider-bottom .navigation label:nth-child(3) span,
+#r4:active ~ .slider .slider-bottom .navigation label:nth-child(4) span{
+    background-color: mediumpurple;
+
+}
+
 .slider-bottom {
     display: flex;
     justify-content: space-between;
     margin: 50px;
-
+    align-items: center;
 }
 
 .quotes-container {
@@ -112,21 +145,24 @@ input[name='r'] {
 }
 
 .p {
+    color: rebeccapurple;
     width: 25%;
     transition: all 0.5s ease;
 }
-.p-1 {
-    background-color: greenyellow;
+
+
+.check-with-label:checked + .label-for-check {
+    font-weight: bold;
 }
 
-.p-2 {
-    background-color: palegreen;
+input[name='r']:checked + label span{
+    background-color: #fff;
 }
 
-.p-3 {
-    background-color: pink;
+
+
+input[type="radio"]:checked:nth-of-type(1) + label:nth-child(1) {
+    background-color: #111;
 }
 
-.p-4 {
-    background-color: deeppink;
-}
+input[type="radio"]:checked+label { font-weight: bold; }
