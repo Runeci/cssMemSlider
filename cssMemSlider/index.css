@@ -1,15 +1,4 @@
 
-@media (max-width: 1000px) {
-    .slider-bottom {
-        flex-direction: column;
-    }
-    .navigation {
-        order: 0;
-    }
-    .quotes-container{
-        order: 1;
-    }
-}
 
 * {
     margin: 0;
@@ -26,7 +15,6 @@ body {
 
 .center {
     width: 55%;
-
     margin: 3% auto 0 auto;
     overflow: hidden;
     display: flex;
@@ -43,7 +31,7 @@ body {
 
 .navigation {
     display: flex;
-    margin-left: 20px;
+    margin-left: 3%;
     align-items: center;
     justify-content: center;
 }
@@ -56,7 +44,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 10%;
 }
 
 .bar span {
@@ -130,8 +118,8 @@ input[name='r'] {
 .slider-bottom {
     display: flex;
     justify-content: space-between;
-    margin: 50px;
     align-items: center;
+    padding: 5%;
 }
 
 .quotes-container {
@@ -142,6 +130,7 @@ input[name='r'] {
 .slider-quotes {
     width: 400%;
     display: flex;
+    align-items: center;
 }
 
 .p {
@@ -166,3 +155,24 @@ input[type="radio"]:checked:nth-of-type(1) + label:nth-child(1) {
 }
 
 input[type="radio"]:checked+label { font-weight: bold; }
+
+
+
+@media (max-width: 1000px) {
+    .slider-bottom {
+        flex-direction: column;
+        gap: 3%;
+        margin: 2% 4% 2% 4%;
+        padding: 0;
+        font-size: 0.8em;
+    }
+    .navigation {
+        order: 0;
+        margin-left: 0;
+    }
+    .quotes-container{
+        order: 1;
+        text-align: center;
+    }
+
+}
