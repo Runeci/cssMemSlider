@@ -1,0 +1,186 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightsteelblue;
+}
+
+.body {
+    height: 50vh;
+}
+
+.center {
+    width: 55%;
+    margin: 3% auto 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+}
+
+.slides {
+    width: 400%;
+    display: flex;
+
+}
+
+
+.navigation {
+    display: flex;
+    margin-left: 3%;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition: all .5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
+
+.bar span {
+    cursor: pointer;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: mediumpurple;
+    border-radius: 50%;
+    /*opacity: 0.6;*/
+
+}
+
+.bar:hover {
+
+}
+
+input[name='r'] {
+    display: none;
+}
+
+
+.slide {
+    width: 25%;
+    transition: all .5s ease;
+}
+
+
+.slide img {
+    width: 100%;
+    height: auto;
+
+}
+
+
+#r1:checked ~ .slider .slides .slide-1,
+#r1:checked ~ .slider .slider-bottom .quotes-container .slider-quotes .p-1 {
+    margin-left: 0;
+}
+
+#r2:checked ~ .slider .slides .slide-1,
+#r2:checked ~ .slider .slider-bottom .quotes-container .slider-quotes .p-1 {
+    margin-left: -25%;
+}
+
+#r3:checked ~ .slider .slides .slide-1,
+#r3:checked ~ .slider .slider-bottom .quotes-container .slider-quotes .p-1 {
+    margin-left: -50%;
+}
+
+#r4:checked ~ .slider .slides .slide-1,
+#r4:checked ~ .slider .slider-bottom .quotes-container .slider-quotes .p-1 {
+    margin-left: -75%;
+}
+
+
+#r1:hover ~ .slider .slider-bottom .navigation label:nth-child(1) span,
+#r2:hover ~ .slider .slider-bottom .navigation label:nth-child(2) span,
+#r3:hover ~ .slider .slider-bottom .navigation label:nth-child(3) span,
+#r4:hover ~ .slider .slider-bottom .navigation label:nth-child(4) span {
+    opacity: 0.6;
+}
+
+
+#r1:checked ~ .slider .slider-bottom .navigation label:nth-child(1) span,
+#r2:checked ~ .slider .slider-bottom .navigation label:nth-child(2) span,
+#r3:checked ~ .slider .slider-bottom .navigation label:nth-child(3) span,
+#r4:checked ~ .slider .slider-bottom .navigation label:nth-child(4) span {
+    background-color: lightsteelblue;
+}
+
+#r1:active ~ .slider .slider-bottom .navigation label:nth-child(1) span,
+#r2:active ~ .slider .slider-bottom .navigation label:nth-child(2) span,
+#r3:active ~ .slider .slider-bottom .navigation label:nth-child(3) span,
+#r4:active ~ .slider .slider-bottom .navigation label:nth-child(4) span {
+    background-color: purple;
+}
+
+.slider-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+}
+
+.quotes-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-quotes {
+    width: 400%;
+    display: flex;
+    align-items: center;
+}
+
+.p {
+    color: rebeccapurple;
+    width: 25%;
+    transition: all 0.5s ease;
+}
+
+
+.check-with-label:checked + .label-for-check {
+    font-weight: bold;
+}
+
+input[name='r']:checked + label span {
+    background-color: #fff;
+}
+
+
+input[type="radio"]:checked:nth-of-type(1) + label:nth-child(1) {
+    background-color: #111;
+}
+
+input[type="radio"]:checked + label {
+    font-weight: bold;
+}
+
+
+@media (max-width: 1000px) {
+    .slider-bottom {
+        flex-direction: column;
+        gap: 3%;
+        margin: 2% 4% 2% 4%;
+        padding: 0;
+        font-size: 0.8em;
+    }
+
+    .navigation {
+        order: 0;
+        margin-left: 0;
+    }
+
+    .quotes-container {
+        order: 1;
+    }
+
+}
